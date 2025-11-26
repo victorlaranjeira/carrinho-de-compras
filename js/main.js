@@ -1,5 +1,12 @@
-import TaskModel from "./model/TaskModel.js";
-import TaskView from "./view/TaskView.js";
-import TaskController from "./controller/TaskController.js";
+import CartModel from './model/CartModel.js';
+import CartView from './view/CartView.js';
+import CartController from './controller/CartController.js';
 
-const app = new TaskController(new TaskModel(), new TaskView());
+// Inicializa a aplicação quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', () => {
+    const appModel = new CartModel();
+    const appView = new CartView();
+    
+    // Inicia o Controlador, ligando as três partes
+    new CartController(appModel, appView);
+});
